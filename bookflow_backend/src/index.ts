@@ -35,6 +35,15 @@ app.use('/api/v1/listings', (req, res, next) => {
 app.use(rateLimit({ windowMs: 60_000, limit: 300, standardHeaders: true, legacyHeaders: false }));
 app.use(express.json({ limit: '1mb' }));
 
+app.get('/', (_req, res) => {
+  res.json({
+    name: 'BookFlow REST API',
+    status: 'online',
+    health: '/health',
+    endpoints: '/api/v1/listings',
+  });
+});
+
 app.get('/health', (_req, res) => {
   res.json({ ok: true });
 });
