@@ -1,0 +1,58 @@
+// GENERATED from the route files under ./routes - maps URL paths to handlers.
+import type { Express } from 'express';
+import { adapt } from './adapter';
+import * as r0 from './routes/admin/listings/route';
+import * as r1 from './routes/admin/listings/[id]/route';
+import * as r2 from './routes/admin/summary/route';
+import * as r3 from './routes/admin/users/route';
+import * as r4 from './routes/admin/users/[id]/route';
+import * as r5 from './routes/become-provider/route';
+import * as r6 from './routes/bookings/route';
+import * as r7 from './routes/bookings/[id]/route';
+import * as r8 from './routes/listings/route';
+import * as r9 from './routes/listings/[id]/route';
+import * as r10 from './routes/me/route';
+import * as r11 from './routes/messages/route';
+import * as r12 from './routes/messages/[itemId]/route';
+import * as r13 from './routes/notifications/route';
+import * as r14 from './routes/payments/route';
+import * as r15 from './routes/provider/bookings/route';
+import * as r16 from './routes/provider/bookings/[itemId]/route';
+import * as r17 from './routes/provider/listings/route';
+import * as r18 from './routes/provider/listings/[id]/route';
+import * as r19 from './routes/provider/reviews/route';
+import * as r20 from './routes/provider/summary/route';
+import * as r21 from './routes/reviews/route';
+
+export function registerRoutes(app: Express) {
+  app.get('/api/v1/admin/listings', adapt(r0.GET));
+  app.patch('/api/v1/admin/listings/:id', adapt(r1.PATCH));
+  app.get('/api/v1/admin/summary', adapt(r2.GET));
+  app.get('/api/v1/admin/users', adapt(r3.GET));
+  app.patch('/api/v1/admin/users/:id', adapt(r4.PATCH));
+  app.post('/api/v1/become-provider', adapt(r5.POST));
+  app.get('/api/v1/bookings', adapt(r6.GET));
+  app.post('/api/v1/bookings', adapt(r6.POST));
+  app.get('/api/v1/bookings/:id', adapt(r7.GET));
+  app.patch('/api/v1/bookings/:id', adapt(r7.PATCH));
+  app.get('/api/v1/listings', adapt(r8.GET));
+  app.get('/api/v1/listings/:id', adapt(r9.GET));
+  app.get('/api/v1/me', adapt(r10.GET));
+  app.get('/api/v1/messages', adapt(r11.GET));
+  app.get('/api/v1/messages/:itemId', adapt(r12.GET));
+  app.post('/api/v1/messages/:itemId', adapt(r12.POST));
+  app.get('/api/v1/notifications', adapt(r13.GET));
+  app.patch('/api/v1/notifications', adapt(r13.PATCH));
+  app.get('/api/v1/payments', adapt(r14.GET));
+  app.post('/api/v1/payments', adapt(r14.POST));
+  app.get('/api/v1/provider/bookings', adapt(r15.GET));
+  app.patch('/api/v1/provider/bookings/:itemId', adapt(r16.PATCH));
+  app.get('/api/v1/provider/listings', adapt(r17.GET));
+  app.post('/api/v1/provider/listings', adapt(r17.POST));
+  app.patch('/api/v1/provider/listings/:id', adapt(r18.PATCH));
+  app.put('/api/v1/provider/listings/:id', adapt(r18.PUT));
+  app.get('/api/v1/provider/reviews', adapt(r19.GET));
+  app.get('/api/v1/provider/summary', adapt(r20.GET));
+  app.get('/api/v1/reviews', adapt(r21.GET));
+  app.post('/api/v1/reviews', adapt(r21.POST));
+}
